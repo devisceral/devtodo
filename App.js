@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { AntDesign } from "@expo/vector-icons";
 import colors from './Colors';
-
+import tempData from './tempData';
+import TodoList from './components/TodoList';
 export default function App() {
   return (
     <View style={styles.container}>
@@ -21,6 +22,18 @@ export default function App() {
           </TouchableOpacity>
 
           <Text style={styles.add}>Add List</Text>
+        </View>
+
+        <View style={{height: 275, paddingLeft:32}}>
+          <FlatList 
+            data={tempData} 
+            keyExtractor={item => item.name} 
+            horizontal={true} 
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item})=>(
+              <TodoList list={item} />
+            )} 
+            />
         </View>
       </View>
   );
