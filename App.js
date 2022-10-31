@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { AntDesign } from "@expo/vector-icons";
 import colors from './Colors';
 
 export default function App() {
@@ -11,6 +12,15 @@ export default function App() {
             &lsaquo;Dev&rsaquo;<Text style={{fontWeigth: "300", color: colors.blue}}>Todo
           </Text>
           </Text>
+          <View style={styles.divider} />
+        </View>
+
+        <View style={{marginVertical: 48}}>
+          <TouchableOpacity style={styles.addList}>
+            <AntDesign name="plus" size={16} color={colors.blue} />
+          </TouchableOpacity>
+
+          <Text style={styles.add}>Add List</Text>
         </View>
       </View>
   );
@@ -28,5 +38,25 @@ const styles = StyleSheet.create({
     height: 1,
     flex: 1,
     alignSelf: "center"
+  },
+  title: {
+    fontSize: 38,
+    fontWeight: "800",
+    color: colors.black,
+    paddingHorizontal: 64
+  },
+  addList: {
+    borderWidth: 2,
+    borderColor: colors.lightBlue,
+    borderRadius: 4,
+    padding: 16,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  add: {
+    color: colors.blue,
+    fontWeight: "600",
+    fontSize: 14,
+    marginTop: 8,
   }
 });
