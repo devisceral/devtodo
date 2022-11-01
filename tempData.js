@@ -7,7 +7,7 @@ const tempData = [
     todos: [
       {
         title: "Book Flight",
-        completed: false
+        completed: true
       },
       {
         title: "Passport Check",
@@ -33,7 +33,7 @@ const tempData = [
       },
       {
         title: "Passport Check",
-        completed: true
+        completed: false
       },
       {
         title: "Reserve Hotel Room",
@@ -55,11 +55,11 @@ const tempData = [
       },
       {
         title: "Passport Check",
-        completed: true
+        completed: false
       },
       {
         title: "Reserve Hotel Room",
-        completed: true
+        completed: false
       },
       {
         title: "Build App",
