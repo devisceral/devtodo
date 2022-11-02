@@ -4,6 +4,7 @@ import { AntDesign } from "@expo/vector-icons";
 import colors from './Colors';
 import tempData from './tempData';
 import TodoList from './components/TodoList';
+import AddListModal from './components/AddListModal';
 
 export default class App extends React.Component{
 
@@ -24,9 +25,7 @@ export default class App extends React.Component{
             visible={this.state.addTodoVisible} 
             onRequestClose={()=> this.toggleAddTodoModal()}
           >
-            <View>
-              <Text>I'm a modal!</Text>
-            </View>
+            <AddListModal closeModal={() => this.toggleAddTodoModal()}/>
           </Modal>
 
           <View style={{flexDirection: "row"}}>
