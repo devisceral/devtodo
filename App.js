@@ -16,6 +16,11 @@ export default class App extends React.Component{
       
     this.setState({ addTodoVisible: !this.state.addTodoVisible });
   }
+
+  renderList = list => {
+    return <TodoList list={list} />
+  }
+
   render(){
 
     return (
@@ -51,9 +56,7 @@ export default class App extends React.Component{
               keyExtractor={item => item.name} 
               horizontal={true} 
               showsHorizontalScrollIndicator={false}
-              renderItem={({item})=>(
-                <TodoList list={item} />
-              )} 
+              renderItem={({item})=>(this.renderList(item))} 
               />
           </View>
         </View>
