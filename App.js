@@ -69,8 +69,9 @@ export default class App extends React.Component{
               keyExtractor={item => item.name} 
               horizontal={true} 
               showsHorizontalScrollIndicator={false}
-              renderItem={({item})=>(this.renderList(item))} 
-              />
+              renderItem={({item})=>(this.renderList(item))}
+              keyboardShouldPersistTaps="always"
+            />
           </View>
         </View>
     );
