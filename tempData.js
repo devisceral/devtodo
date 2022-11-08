@@ -2,6 +2,7 @@
 
 const tempData = [
   {
+    id: 1,
     name: "Plan a Trip",
     color: "#24A6d9",
     todos: [
@@ -24,6 +25,7 @@ const tempData = [
     ]
   },
   {
+    id: 2,
     name: "Build todo list",
     color: "#2416D9",
     todos: [
@@ -46,6 +48,7 @@ const tempData = [
     ]
   },
   {
+    id: 3,
     name: "Build todo list",
     color: "#A7CBD9",
     todos: [

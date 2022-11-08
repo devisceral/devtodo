@@ -27,7 +27,11 @@ export default class TodoList extends React.Component {
           visible={this.state.showListVisible} 
           onRequestClose={()=> this.toogleListModal()}
         >
-        <TodoModal list={list} closeModal={()=> this.toogleListModal()} />
+        <TodoModal 
+          list={list} 
+          closeModal={()=> this.toogleListModal()} 
+          updateList={this.props.updateList} 
+        />
 
         </Modal>
         
