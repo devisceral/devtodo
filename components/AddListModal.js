@@ -57,6 +57,7 @@ export default class AddListModal extends Component {
 
           <TouchableOpacity 
             style={[styles.create, { backgroundColor: this.state.color}]}
+            disabled={this.state.name ? false : true}
             onPress={this.createTodo}
           >
             <Text style={{color: colors.white, fontWeight: "600"}}>Create!</Text>

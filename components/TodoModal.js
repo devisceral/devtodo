@@ -17,13 +17,15 @@ export default class TodoModal extends Component {
   }
 
   addTodo = () => {
-    let list = this.props.list;
-    list.todos.push({title: this.state.newTodo, completed: false});
 
-    this.props.updateList(list);
-    this.setState({newTodo: ""});
+        let list = this.props.list;
 
-    Keyboard.dismiss();
+        list.todos.push({title: this.state.newTodo, completed: false});
+    
+        this.props.updateList(list);
+        this.setState({newTodo: ""});
+    
+        Keyboard.dismiss();
   };
 
   renderTodo = (todo, index) => {
@@ -93,7 +95,11 @@ export default class TodoModal extends Component {
               onChangeText={text => this.setState({newTodo:text})} 
               value={this.state.newTodo} 
             />
-            <TouchableOpacity style={[styles.addTodo, {backgroundColor: list.color}]} onPress={()=> this.addTodo()} >
+            <TouchableOpacity
+              disabled={this.state.newTodo ? false : true} 
+              style={[styles.addTodo, {backgroundColor: list.color}]} 
+              onPress={()=> this.addTodo()} 
+            >
               <AntDesign name="plus" size={16} color={colors.white} />
             </TouchableOpacity>
           </View>
